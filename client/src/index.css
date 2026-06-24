@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    font-feature-settings: "tnum" 1; /* tabular numbers for money columns */
+  }
+}
+
+/* Hand-drawn underline accent, used sparingly as the page's signature flourish */
+.ledger-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    theme("colors.moss.300") 0,
+    theme("colors.moss.300") 6px,
+    transparent 6px,
+    transparent 10px
+  );
+  height: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
